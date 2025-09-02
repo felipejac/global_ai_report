@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tyna AI - Global AI Research & Market Reports</title>
+    <meta name="description" content="Explore in-depth AI research reports from Tyna AI, covering market trends, innovation, and strategic outlooks for North America, Europe, Asia, and more. A definitive resource for business and policy leaders.">
+    <meta name="keywords" content="AI research, AI market analysis, AI reports, Tyna AI, artificial intelligence trends, global AI strategies, AI in Europe, AI in North America, AI in Asia">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        .container { max-width: 1200px; }
+        .nav-link { transition: color 0.3s; }
+        .nav-link:hover { color: #0ea5e9; }
+        .tab-button {
+            border-bottom: 2px solid transparent;
+            padding-bottom: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #4b5563;
+        }
+        .tab-button:hover {
+            color: #0ea5e9;
+        }
+        .tab-button.active {
+            border-color: #0ea5e9;
+            color: #0ea5e9;
+            font-weight: 600;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @media (min-width: 768px) {
+            .chart-container { height: 400px; }
+        }
+        .report-image {
+            width: 100%;
+            height: 12rem;
+            object-fit: cover;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center cursor-pointer" onclick="showHomePage()">
+                    <span class="font-bold text-xl text-sky-600">Tyna AI</span>
+                    <span class="ml-4 text-slate-500 hidden md:inline">Global AI Research</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div id="home-page">
+            <section class="text-center mb-16">
+                <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-slate-900">Your Guide to the Global AI Landscape</h1>
+                <p class="mt-4 text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">Explore in-depth research and market analysis on the state of Artificial Intelligence across the world.</p>
+                <div class="mt-8">
+                    <div class="plyr__video-embed" id="player">
+                        <iframe
+                            src="https://www.youtube.com/embed/bT9F-2gG_iE?title=YouTube+video+player&byline=0&portrait=0&quality=auto"
+                            allowfullscreen
+                            allowtransparency
+                            allow="autoplay"
+                        ></iframe>
+                    </div>
+                </div>
+            </section>
+            <section id="reports" class="mb-24">
+                <h2 class="text-3xl font-bold text-center mb-12">Latest Reports</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="report-card cursor-pointer bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300" data-report-id="north-america">
+                        <img src="https://images.unsplash.com/photo-1695669342750-f80e90956272?q=80&w=1770&auto=format&fit=crop" alt="North America AI Report" class="report-image" />
+                        <h3 class="text-xl font-bold text-slate-900">The AI Landscape in North America</h3>
+                        <p class="mt-2 text-slate-600">Analysis of market dynamics, enterprise adoption, and strategic outlook from 2023 to 2025.</p>
+                    </div>
+                    <div class="report-card cursor-pointer bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300" data-report-id="south-america">
+                        <img src="https://images.unsplash.com/photo-1549465220-1a90889c5123?q=80&w=1974&auto=format&fit=crop" alt="South America AI Report" class="report-image" />
+                        <h3 class="text-xl font-bold text-slate-900">AI in South America: From Ambition to Execution</h3>
+                        <p class="mt-2 text-slate-600">Exploring the transition from technology adoption to strategic implementation and digital sovereignty.</p>
+                    </div>
+                    <div class="report-card cursor-pointer bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300" data-report-id="central-america">
+                        <img src="https://images.unsplash.com/photo-1620138546376-782a20803450?q=80&w=1770&auto=format&fit=crop" alt="Central America AI Report" class="report-image" />
+                        <h3 class="text-xl font-bold text-slate-900">The AI Landscape in Central America</h3>
+                        <p class="mt-2 text-slate-600">A strategic analysis of market trends, policy, and opportunities in a high-growth ecosystem.</p>
+                    </div>
+                    <div class="report-card cursor-pointer bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300" data-report-id="europe">
+                        <img src="https://images.unsplash.com/photo-1596767702816-ce222045e730?q=80&w=1770&auto=format&fit=crop" alt="Europe AI Report" class="report-image" />
+                        <h3 class="text-xl font-bold text-slate-900">The State of AI in Europe</h3>
+                        <p class="mt-2 text-slate-600">Navigating trust and innovation in the global AI race with a unique, human-centric approach.</p>
+                    </div>
+                    <div class="report-card cursor-pointer bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300" data-report-id="middle-east-africa">
+                        <img src="https://images.unsplash.com/photo-1579227114347-15d08fc37ee7?q=80&w=1827&auto=format&fit=crop" alt="Middle East & Africa AI Report" class="report-image" />
+                        <h3 class="text-xl font-bold text-slate-900">A Tale of Two AI Transformations in the Middle East and Africa</h3>
+                        <p class="mt-2 text-slate-600">A look at the contrasting top-down and grassroots approaches to AI development in two dynamic regions.</p>
+                    </div>
+                    <div class="report-card cursor-pointer bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300" data-report-id="asia">
+                        <img src="https://images.unsplash.com/photo-1528659858347-3f36a3f2f81d?q=80&w=1887&auto=format&fit=crop" alt="Asia AI Report" class="report-image" />
+                        <h3 class="text-xl font-bold text-slate-900">The Artificial Intelligence Landscape in Asia</h3>
+                        <p class="mt-2 text-slate-600">A strategic analysis of Asia's journey from technology consumption to an active architect of its digital future.</p>
+                    </div>
+                     <div class="report-card cursor-pointer bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300" data-report-id="russia">
+                        <img src="https://images.unsplash.com/photo-1597813289060-e8835e29c8e2?q=80&w=1770&auto=format&fit=crop" alt="Russia AI Report" class="report-image" />
+                        <h3 class="text-xl font-bold text-slate-900">The State of Artificial Intelligence in Russia</h3>
+                        <p class="mt-2 text-slate-600">An analysis of Russia's state-led "catch-up development" paradigm and its geopolitical imperative for technological sovereignty.</p>
+                    </div>
+                     <div class="report-card cursor-pointer bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300" data-report-id="nordic-countries">
+                        <img src="https://images.unsplash.com/photo-1555319888-5188f4077f5a?q=80&w=1887&auto=format&fit=crop" alt="Nordic Countries AI Report" class="report-image" />
+                        <h3 class="text-xl font-bold text-slate-900">The Nordic Paradigm</h3>
+                        <p class="mt-2 text-slate-600">An in-depth analysis of the region's socio-economic model, innovations, and future challenges in the age of AI.</p>
+                    </div>
+                     <div class="report-card cursor-pointer bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300" data-report-id="india">
+                        <img src="https://images.unsplash.com/photo-1556905587-f273294c7b8c?q=80&w=1887&auto=format&fit=crop" alt="India AI Report" class="report-image" />
+                        <h3 class="text-xl font-bold text-slate-900">India's Digital Ascent</h3>
+                        <p class="mt-2 text-slate-600">A deep dive into the national strategy driving India's AI revolution, its industrial impact, and challenges.</p>
+                    </div>
+                     <div class="report-card cursor-pointer bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300" data-report-id="oceania">
+                        <img src="https://images.unsplash.com/photo-1563720760199-a65c272551a3?q=80&w=1935&auto=format&fit=crop" alt="Oceania AI Report" class="report-image" />
+                        <h3 class="text-xl font-bold text-slate-900">The Oceania AI Landscape: A Strategic Assessment</h3>
+                        <p class="mt-2 text-slate-600">A strategic assessment of Australia and New Zealand’s approach to AI, from market growth to governance.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div id="report-page" class="hidden">
+            <button onclick="showHomePage()" class="mb-8 flex items-center text-slate-600 hover:text-sky-600 transition-colors">
+                <span class="mr-2">&larr;</span> Back to Reports
+            </button>
+            <div id="report-content"></div>
+        </div>
+    </main>
+    <footer class="bg-slate-100 border-t border-slate-200 mt-16">
+        <div class="container mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center text-sm text-slate-500">
+            <p>&copy; 2025 Tyna AI. All rights reserved.</p>
+            <p class="mt-1">Interactive Report Portal.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+    <script>
+        const reportsData = {
+            'north-america': {
+                title: 'The AI Landscape in North America: 2023–2025',
+                sections: [
+                    {
+                        id: 'market-overview',
+                        title: '1. Market Dynamics & The Generative Catalyst',
+                        intro: 'This section explores the unprecedented financial surge in North America\'s AI sector. Fueled by generative AI, the market is experiencing explosive growth in valuation and venture capital funding, reshaping the economic landscape and concentrating capital in a few key areas.',
+                        content: `
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                                <div class="bg-white p-6 rounded-xl shadow-md">
+                                    <h3 class="font-semibold text-center mb-4">North America AI Market Growth (USD Billions)</h3>
+                                    <div class="chart-container"><canvas id="marketGrowthChart"></canvas></div>
+                                    <p class="text-sm text-slate-500 mt-4 text-center">The market is projected to grow at a CAGR of 34.81% through 2029, driven by massive investment and adoption.</p>
+                                </div>
+                                <div class="bg-white p-6 rounded-xl shadow-md">
+                                    <h3 class="font-semibold text-center mb-4">VC Funding Surge (H1 2025)</h3>
+                                    <div class="chart-container"><canvas id="vcFundingChart"></canvas></div>
+                                    <p class="text-sm text-slate-500 mt-4 text-center">Nearly **$90 billion** of the $145 billion in total VC funding was directed toward AI-related companies in the first half of 2025.</p>
+                                </div>
+                            </div>`,
+                        charts: {
+                            'marketGrowthChart': {
+                                type: 'line',
+                                labels: ['2023', '2024', '2025'],
+                                data: [39.36, 50.16, 66.21],
+                                borderColor: '#0ea5e9',
+                                backgroundColor: 'rgba(14, 165, 233, 0.1)'
+                            },
+                            'vcFundingChart': {
+                                type: 'doughnut',
+                                labels: ['AI-Related Funding', 'Other VC Funding'],
+                                data: [90, 55],
+                                backgroundColor: ['#0ea5e9', '#e2e8f0']
+                            }
+                        }
+                    },
+                    {
+                        id: 'adoption-paradox',
+                        title: '2. The "Pilot Purgatory" Paradox',
+                        intro: 'While enterprise adoption of AI tools has skyrocketed, a critical challenge has emerged. This section examines the disconnect between widespread experimentation and the struggle to achieve scalable, enterprise-wide transformation, a phenomenon known as "pilot purgatory."',
+                        content: `
+                            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+                                <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-md">
+                                    <h3 class="font-semibold text-center mb-4">Enterprise GenAI Adoption</h3>
+                                    <div class="chart-container h-64 md:h-80"><canvas id="adoptionRateChart"></canvas></div>
+                                    <p class="text-sm text-slate-500 mt-4 text-center">Adoption in at least one business function more than doubled from 33% in 2023 to 71% in 2024.</p>
+                                </div>
+                                <div class="lg:col-span-3">
+                                    <h3 class="font-semibold text-center mb-4">The Cycle of Stagnation</h3>
+                                    <div class="p-6 bg-white rounded-xl shadow-md">
+                                        <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-2 text-center text-sm">
+                                            <div class="flex-1 p-3 bg-slate-50 rounded-lg"><strong>1. Tactical Adoption</strong></div>
+                                            <div class="self-center text-slate-400 font-bold mx-2">&rarr;</div>
+                                            <div class="flex-1 p-3 bg-slate-50 rounded-lg"><strong>2. Isolated Experiments</strong></div>
+                                            <div class="self-center text-slate-400 font-bold mx-2">&rarr;</div>
+                                            <div class="flex-1 p-3 bg-slate-50 rounded-lg"><strong>3. Lack of Governance</strong></div>
+                                            <div class="self-center text-slate-400 font-bold mx-2">&rarr;</div>
+                                            <div class="flex-1 p-3 bg-red-50 text-red-800 rounded-lg"><strong>4. Failure to Scale</strong></div>
+                                        </div>
+                                    </div>
+                                    <p class="text-sm text-slate-500 mt-4 text-center">This cycle leads to project stagnation, with many organizations abandoning initiatives before realizing value.</p>
+                                </div>
+                            </div>`,
+                        charts: {
+                            'adoptionRateChart': {
+                                type: 'bar',
+                                labels: ['2023', '2024'],
+                                data: [33, 71],
+                                backgroundColor: ['#60a5fa', '#0ea5e9']
+                            }
+                        }
+                    },
+                     {
+                        id: 'sectors',
+                        title: '3. AI in Action: Sector Deep Dive',
+                        intro: 'Despite adoption challenges, AI is delivering measurable value across industries. This section provides an interactive look at tangible case studies and quantifiable results in key sectors. Click on a tab below to explore the real-world impact of AI.',
+                        content: `
+                            <div>
+                                <div class="border-b border-gray-200 mb-8">
+                                    <nav class="-mb-px flex space-x-6 justify-center" aria-label="Tabs">
+                                        <button class="tab-button active" data-tab="finance">Financial Services</button>
+                                        <button class="tab-button" data-tab="health">Healthcare</button>
+                                        <button class="tab-button" data-tab="gov">Government</button>
+                                        <button class="tab-button" data-tab="creative">Creative</button>
+                                    </nav>
+                                </div>
+                                <div id="tab-content" class="bg-white p-8 rounded-xl shadow-md min-h-[20rem] flex items-center"></div>
+                            </div>`,
+                        tabContents: {
+                             finance: `<div class="text-center"><h4 class="text-2xl font-bold mb-4">Financial Services</h4><p class="text-slate-600 max-w-2xl mx-auto mb-6">AI is now deeply embedded in core functions, moving beyond simple automation to fraud detection, risk management, and personalized customer service.</p><div class="bg-sky-50 p-4 rounded-lg inline-block"><p class="text-lg"><strong class="text-sky-600">Bank of America's "Erica"</strong> virtual assistant handles over <strong class="text-sky-600">40%</strong> of client interactions, enhancing efficiency and customer experience.</p></div></div>`,
+                            health: `<div class="text-center"><h4 class="text-2xl font-bold mb-4">Healthcare</h4><p class="text-slate-600 max-w-2xl mx-auto mb-6">AI is being rapidly integrated to address systemic challenges like workforce shortages, administrative burdens, and the need for more accurate diagnostics.</p><div class="bg-sky-50 p-4 rounded-lg inline-block"><p class="text-lg">AI-enabled Butterfly IQ probes led to a <strong class="text-sky-600">116% increase</strong> in ultrasound charge capture at the University of Rochester Medical Center.</p></div></div>`,
+                            gov: `<div class="text-center"><h4 class="text-2xl font-bold mb-4">Enterprise & Government</h4><p class="text-slate-600 max-w-2xl mx-auto mb-6">Governments are not just regulating AI; they are actively adopting it as a strategic tool for efficiency, security, and modernization.</p><div class="bg-sky-50 p-4 rounded-lg inline-block"><p class="text-lg">An AI model used by Canada's IRCC accelerates the processing of over <strong class="text-sky-600">7 million</strong> routine applications.</p></div></div>`,
+                            creative: `<div class="text-center"><h4 class="text-2xl font-bold mb-4">Consumer & Creative Industries</h4><p class="text-slate-600 max-w-2xl mx-auto mb-6">The consumer and creative sectors are being profoundly transformed by AI, from hyper-personalized experiences to automated content production.</p><div class="bg-sky-50 p-4 rounded-lg inline-block"><p class="text-lg">Moments Lab's MXT-2 tool produces video highlight reels up to <strong class="text-sky-600">7x faster</strong> than manual methods for clients like Warner Bros.</p></div></div>`
+                        }
+                    },
+                    {
+                        id: 'challenges',
+                        title: '4. Foundational Challenges: Infrastructure & Talent',
+                        intro: 'The AI revolution rests on two pillars: massive infrastructure and skilled talent. This section delves into the geopolitical race for computing power and the persistent, widening skills gap that threatens to bottleneck progress and innovation across North America.',
+                        content: `
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">The AI Infrastructure Race</h3>
+                                    <p class="text-slate-600 mb-4">The immense capital expenditure in AI is creating a new geopolitical landscape where technological power is directly tied to compute capacity.</p>
+                                    <div class="text-4xl font-bold text-sky-600">USD 300 Billion</div>
+                                    <p class="text-sm text-slate-500">Projected spending by hyperscalers on AI infrastructure in 2025 alone.</p>
+                                </div>
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                     <h3 class="text-2xl font-bold mb-4">The Critical Skills Gap</h3>
+                                    <p class="text-slate-600 mb-4">A severe talent shortage is the single greatest bottleneck to scaling AI adoption.</p>
+                                    <div class="grid grid-cols-2 gap-4 mt-4">
+                                        <div class="bg-slate-50 p-4 rounded-lg">
+                                            <div class="text-2xl font-bold text-sky-600">65%</div>
+                                            <p class="text-sm text-slate-500">of orgs abandoned AI projects due to a lack of skilled employees.</p>
+                                        </div>
+                                        <div class="bg-slate-50 p-4 rounded-lg">
+                                            <div class="text-2xl font-bold text-sky-600">71%</div>
+                                            <p class="text-sm text-slate-500">of AI-skilled workers are men, revealing a stark gender disparity.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>`
+                    },
+                    {
+                        id: 'outlook',
+                        title: '5. Strategic Outlook: Governance & Public Trust',
+                        intro: 'As AI becomes more powerful, the focus shifts to governance and ethics. This section contrasts the strategic approaches of the U.S. and Canada and examines the critical role of public trust in shaping the future of AI development and regulation.',
+                        content: `
+                            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+                                <div class="lg:col-span-3 bg-white p-6 rounded-xl shadow-md">
+                                    <h3 class="font-semibold text-center mb-4">A Tale of Two Strategies</h3>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-center">
+                                        <div class="border-r-0 md:border-r border-slate-200 pr-6">
+                                            <h4 class="font-bold text-lg mb-2">United States 🇺🇸</h4>
+                                            <p class="text-sm text-slate-600">A competitive "Win the AI Race" approach focused on accelerating innovation and removing regulatory hurdles to achieve global dominance.</p>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-lg mb-2">Canada 🇨🇦</h4>
+                                            <p class="text-sm text-slate-600">A human-centric, collaborative, and cautious strategy designed to build public trust and ensure responsible, equitable adoption.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                 <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-md">
+                                    <h3 class="font-semibold text-center mb-4">Public Optimism on AI (2025)</h3>
+                                     <div class="chart-container h-64 md:h-80"><canvas id="optimismChart"></canvas></div>
+                                    <p class="text-sm text-slate-500 mt-4 text-center">Low public trust in North America highlights the urgent need for leaders to build a reputation for "trustworthy AI."</p>
+                                </div>
+                            </div>`,
+                        charts: {
+                            'optimismChart': {
+                                type: 'bar',
+                                labels: ['China', 'Canada', 'U.S.', 'Europe'],
+                                data: [83, 40, 39, 36],
+                                backgroundColor: '#0ea5e9'
+                            }
+                        }
+                    },
+                    {
+                        id: 'recommendations',
+                        title: '6. Recommendations: A Roadmap for Leaders',
+                        intro: 'Navigating the AI landscape requires a clear, strategic roadmap. Below are key recommendations to help leaders move from tactical implementation to long-term success, balancing innovation with responsibility.',
+                        content: `
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">For Corporate Leaders</h3>
+                                    <ul class="space-y-4 text-slate-600">
+                                        <li class="flex items-start">
+                                            <span class="text-sky-500 mr-3 mt-1">&#10003;</span>
+                                            <span><strong>From Pilots to Platforms:</strong> Develop an enterprise-wide strategy for AI adoption instead of isolated projects.</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="text-sky-500 mr-3 mt-1">&#10003;</span>
+                                            <span><strong>Invest in Human-in-the-Loop AI:</strong> Prioritize tools that augment human capabilities rather than replacing them.</span>
+                                        </li>
+                                         <li class="flex items-start">
+                                            <span class="text-sky-500 mr-3 mt-1">&#10003;</span>
+                                            <span><strong>Address the Skills Gap Proactively:</strong> Invest in AI literacy programs for the existing workforce to build internal capacity.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                 <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">For Policy Leaders</h3>
+                                    <ul class="space-y-4 text-slate-600">
+                                        <li class="flex items-start">
+                                            <span class="text-sky-500 mr-3 mt-1">&#10003;</span>
+                                            <span><strong>Balance Innovation with Trust:</strong> Adopt a risk-based regulatory framework that fosters confidence without stifling progress.</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="text-sky-500 mr-3 mt-1">&#10003;</span>
+                                            <span><strong>Recognize Infrastructure as a Strategic Asset:</strong> Support the development of robust and secure data centers.</span>
+                                        </li>
+                                         <li class="flex items-start">
+                                            <span class="text-sky-500 mr-3 mt-1">&#10003;</span>
+                                            <span><strong>Promote Public AI Literacy:</strong> Launch partnerships to increase AI understanding across the general population.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>`
+                    }
+                ]
+            },
+            'south-america': {
+                title: 'AI in South America: From Ambition to Execution (2023-2025)',
+                sections: [
+                    {
+                        id: 'market-overview-sa',
+                        title: '1. Market & Investment Dynamics',
+                        intro: 'South America is transitioning from technology adoption to strategic implementation. This section explores the accelerated growth, investment resilience, and a pivotal shift in venture capital flows from 2023 to 2025.',
+                        content: `
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                                <div class="bg-white p-6 rounded-xl shadow-md">
+                                    <h3 class="font-semibold text-center mb-4">Latin America AI Market Growth (USD Billions)</h3>
+                                    <div class="chart-container"><canvas id="marketGrowthSAChart"></canvas></div>
+                                    <p class="text-sm text-slate-500 mt-4 text-center">The market is projected to reach $154.2 billion by 2030, with a strong CAGR of 29.2%.</p>
+                                </div>
+                                <div class="bg-white p-6 rounded-xl shadow-md">
+                                    <h3 class="font-semibold text-center mb-4">VC Funding Q2 2025: Mexico vs Brazil</h3>
+                                    <div class="chart-container"><canvas id="vcFundingSAChart"></canvas></div>
+                                    <p class="text-sm text-slate-500 mt-4 text-center">In a pivotal moment, Mexico surpassed Brazil in VC funding for the first time in over a decade.</p>
+                                </div>
+                            </div>`,
+                         charts: {
+                            'marketGrowthSAChart': {
+                                type: 'line',
+                                labels: ['2023', '2030 (Proj.)'],
+                                data: [25.61, 154.23],
+                                borderColor: '#0ea5e9',
+                                backgroundColor: 'rgba(14, 165, 233, 0.1)'
+                            },
+                            'vcFundingSAChart': {
+                                type: 'bar',
+                                labels: ['Mexico', 'Brazil'],
+                                data: [437, 350],
+                                backgroundColor: ['#0ea5e9', '#60a5fa']
+                            }
+                        }
+                    },
+                    {
+                        id: 'strategic-pillars-sa',
+                        title: '2. Strategic Pillars: Governance & Infrastructure',
+                        intro: 'South American nations are developing sophisticated national AI strategies focused on technological sovereignty and self-reliance. This section highlights key initiatives, including the rise of homegrown LLMs and a focus on sustainable infrastructure.',
+                        content: `
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">A Tale of Localized LLMs</h3>
+                                    <p class="text-slate-600 mb-4">The **Latam-GPT** initiative is a collaborative effort to create a regional, open-source language model trained on local data, including indigenous languages, to ensure cultural and linguistic relevance.</p>
+                                     <ul class="list-disc list-inside space-y-2 text-slate-600">
+                                        <li><strong class="text-sky-600">Latam-GPT:</strong> Open-source LLM for Latin America, led by Chile.</li>
+                                        <li><strong class="text-sky-600">Mexico's LLM:</strong> A government-backed model in collaboration with Nvidia, focused on Mexican culture and history.</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">Infrastructure & Renewable Energy</h3>
+                                    <p class="text-slate-600 mb-4">South America's data center market is growing rapidly, leveraging the region's abundant renewable energy resources to gain a strategic advantage.</p>
+                                    <div class="text-4xl font-bold text-sky-600">USD 1.06 Billion</div>
+                                    <p class="text-sm text-slate-500">AI Data Center Market in South America (2025)</p>
+                                </div>
+                            </div>`
+                    },
+                    {
+                        id: 'ai-in-action-sa',
+                        title: '3. AI in Action: Sectoral Case Studies',
+                        intro: 'AI is moving from pilot projects to scaled, mission-critical solutions in South America. This section provides an interactive look at tangible case studies in key sectors like fintech, agritech, and retail.',
+                        content: `
+                            <div>
+                                <div class="border-b border-gray-200 mb-8">
+                                    <nav class="-mb-px flex space-x-6 justify-center" aria-label="Tabs">
+                                        <button class="tab-button active" data-tab="fintech-sa">Fintech</button>
+                                        <button class="tab-button" data-tab="agritech-sa">Agritech</button>
+                                        <button class="tab-button" data-tab="retail-sa">Retail</button>
+                                    </nav>
+                                </div>
+                                <div id="tab-content-sa" class="bg-white p-8 rounded-xl shadow-md min-h-[20rem] flex items-center"></div>
+                            </div>`,
+                        tabContents: {
+                             'fintech-sa': `<div class="text-center"><h4 class="text-2xl font-bold mb-4">Fintech: Financial Inclusion</h4><p class="text-slate-600 max-w-2xl mx-auto mb-6">AI is a key enabler for financial inclusion, providing credit assessments for underserved populations using alternative data. Brazil's fintech **Neon** and other companies are leading this charge.</p></div>`,
+                            'agritech-sa': `<div class="text-center"><h4 class="text-2xl font-bold mb-4">Agritech: Precision Farming</h4><p class="text-slate-600 max-w-2xl mx-auto mb-6">AI is being used to solve fundamental agricultural challenges. **Farmonaut** provides real-time insights on crop health in Argentina and Peru, leading to a <strong class="text-sky-600">12-18% increase</strong> in crop yields.</p></div>`,
+                            'retail-sa': `<div class="text-center"><h4 class="text-2xl font-bold mb-4">Retail: Modernizing the Customer Experience</h4><p class="text-slate-600 max-w-2xl mx-auto mb-6">AI is modernizing both online and in-store retail. **Walmart Chile** partnered with a startup to implement AI-powered "Smart Carts" that use computer vision to streamline the shopping process.</p></div>`
+                        }
+                    },
+                     {
+                        id: 'challenges-sa',
+                        title: '4. Critical Challenges & Recommendations',
+                        intro: 'South America faces persistent challenges including a talent gap and a "trust paradox." This section outlines key recommendations for businesses, policymakers, and investors.',
+                        content: `
+                            <div class="grid md:grid-cols-2 gap-8 items-start">
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">The Trust Paradox</h3>
+                                    <p class="text-slate-600 mb-4">While over **70%** of Brazilians and Mexicans have used generative AI, nearly half are concerned about misinformation and job loss. This high adoption rate does not correlate with trust in the technology.</p>
+                                </div>
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">Recommendations for Leaders</h3>
+                                    <ul class="space-y-4 text-slate-600">
+                                        <li class="flex items-start">
+                                            <span class="text-sky-500 mr-3 mt-1">&#10003;</span>
+                                            <span><strong>For Businesses:</strong> Prioritize localized solutions and build consumer trust through transparency.</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="text-sky-500 mr-3 mt-1">&#10003;</span>
+                                            <span><strong>For Policymakers:</strong> Formalize AI governance and invest in AI literacy programs for the general public.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>`
+                    }
+                ]
+            },
+            'central-america': {
+                title: 'The AI Landscape in Central America',
+                sections: [
+                    {
+                        id: 'market-overview-ca',
+                        title: '1. Market & Economic Drivers',
+                        intro: 'The AI landscape in Central America is part of a broader Latin American ecosystem experiencing significant, high-velocity growth. This section analyzes key market drivers, investment trends, and the strategic importance of the informal economy.',
+                        content: `
+                             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                                <div class="bg-white p-6 rounded-xl shadow-md">
+                                    <h3 class="font-semibold text-center mb-4">Latin America AI Market Forecasts (2023-2030)</h3>
+                                    <div class="chart-container"><canvas id="marketGrowthCAChart"></canvas></div>
+                                    <p class="text-sm text-slate-500 mt-4 text-center">The overall Latin American AI market is projected to reach $154.2 billion by 2030, with a CAGR of 29.2%.</p>
+                                </div>
+                                <div class="bg-white p-6 rounded-xl shadow-md">
+                                    <h3 class="font-semibold text-center mb-4">Market Growth by Segment (CAGR)</h3>
+                                    <div class="chart-container"><canvas id="segmentGrowthCAChart"></canvas></div>
+                                    <p class="text-sm text-slate-500 mt-4 text-center">Advanced domains like multimodal and composite AI are showing even more rapid growth, indicating market maturation.</p>
+                                </div>
+                            </div>`,
+                        charts: {
+                            'marketGrowthCAChart': {
+                                type: 'line',
+                                labels: ['2023', '2030 (Proj.)'],
+                                data: [25.6, 154.2],
+                                borderColor: '#0ea5e9',
+                                backgroundColor: 'rgba(14, 165, 233, 0.1)'
+                            },
+                             'segmentGrowthCAChart': {
+                                type: 'bar',
+                                labels: ['Overall LatAm AI Market', 'Multimodal AI Market', 'Composite AI Market'],
+                                data: [29.2, 32.5, 30.7],
+                                backgroundColor: ['#0ea5e9', '#60a5fa', '#3b82f6'],
+                                ticks: {
+                                    callback: (value) => `${value}%`
+                                }
+                            }
+                        }
+                    },
+                     {
+                        id: 'policy-framework-ca',
+                        title: '2. Policy and Governance Framework',
+                        intro: 'Central American nations are taking a proactive, human-centric approach to AI governance. This section details how countries are building a foundation of ethical regulation and embracing a "digital non-alignment" strategy.',
+                        content: `
+                            <div class="bg-white p-8 rounded-xl shadow-md">
+                                <h3 class="text-2xl font-bold mb-4">National AI Strategies: A Proactive Approach</h3>
+                                <p class="text-slate-600 mb-4">Countries are formalizing governance to balance innovation with public safety. El Salvador, Costa Rica, and Panama are leading the charge by creating new agencies and strategies. </p>
+                                <div class="relative overflow-x-auto shadow-md rounded-lg">
+                                    <table class="w-full text-sm text-left text-slate-500">
+                                        <thead class="text-xs text-slate-700 uppercase bg-slate-50">
+                                            <tr>
+                                                <th scope="col" class="px-6 py-3">Country</th>
+                                                <th scope="col" class="px-6 py-3">Status of National AI Strategy</th>
+                                                <th scope="col" class="px-6 py-3">Key Policy Principles</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="bg-white border-b">
+                                                <th scope="row" class="px-6 py-4 font-medium text-slate-900 whitespace-nowrap">El Salvador</th>
+                                                <td class="px-6 py-4">Law Passed (Feb 2025)</td>
+                                                <td class="px-6 py-4">Risk-based framework, mandatory registration, human rights.</td>
+                                            </tr>
+                                            <tr class="bg-white border-b">
+                                                <th scope="row" class="px-6 py-4 font-medium text-slate-900 whitespace-nowrap">Costa Rica</th>
+                                                <td class="px-6 py-4">Strategy Adopted (2024)</td>
+                                                <td class="px-6 py-4">Ethical and responsible use, multi-stakeholder input.</td>
+                                            </tr>
+                                            <tr class="bg-white">
+                                                <th scope="row" class="px-6 py-4 font-medium text-slate-900 whitespace-nowrap">Panama</th>
+                                                <td class="px-6 py-4">In Development (Jul 2025)</td>
+                                                <td class="px-6 py-4">Homegrown talent, high-impact applications, regional testbed.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="mt-8">
+                                <h3 class="text-2xl font-bold mb-4">The "Digital Non-Alignment" Imperative</h3>
+                                <p class="text-slate-600">The region is adopting a strategy to avoid "vendor lock-in" with a single foreign power by creating a diversified infrastructure. This allows countries to leverage both American and Chinese AI ecosystems while preserving their technological sovereignty.</p>
+                            </div>`
+                    },
+                    {
+                        id: 'sectoral-applications-ca',
+                        title: '3. AI in Action: Sectoral Applications',
+                        intro: 'AI in Central America is a tool for fundamental development and social inclusion. This section highlights innovative applications in key sectors, demonstrating how technology can solve local challenges and enhance human expertise.',
+                        content: `
+                            <div>
+                                <div class="border-b border-gray-200 mb-8">
+                                    <nav class="-mb-px flex space-x-6 justify-center" aria-label="Tabs">
+                                        <button class="tab-button active" data-tab="agritech-ca">Agri-Tech</button>
+                                        <button class="tab-button" data-tab="tourism-ca">Tourism</button>
+                                        <button class="tab-button" data-tab="fintech-ca">Fintech</button>
+                                    </nav>
+                                </div>
+                                <div id="tab-content-ca" class="bg-white p-8 rounded-xl shadow-md min-h-[20rem] flex items-center"></div>
+                            </div>`,
+                        tabContents: {
+                             'agritech-ca': `<div class="text-center"><h4 class="text-2xl font-bold mb-4">Agri-Tech: Revolutionizing Agriculture</h4><p class="text-slate-600 max-w-2xl mx-auto mb-6">In a region where farming is a cornerstone of the economy, AI is being used for precision farming. **DISAGRO** uses satellite imagery to provide real-time data to farmers in Guatemala, El Salvador, and Honduras.</p></div>`,
+                            'tourism-ca': `<div class="text-center"><h4 class="text-2xl font-bold mb-4">Tourism: Enhancing the Traveler Experience</h4><p class="text-slate-600 max-w-2xl mx-auto mb-6">The most sustainable model for AI in tourism is one that blends technology with human expertise. In Belize, local guides use AI to organize notes, but insist that the "soul" of travel comes from human knowledge.</p></div>`,
+                            'fintech-ca': `<div class="text-center"><h4 class="text-2xl font-bold mb-4">Fintech: Driving Financial Inclusion</h4><p class="text-slate-600 max-w-2xl mx-auto mb-6">AI is a core driver of financial inclusion for the unbanked and underbanked. Drawing from successful models in Africa, AI is being used to assess creditworthiness based on alternative data sources.</p></div>`
+                        }
+                    },
+                    {
+                        id: 'challenges-ca',
+                        title: '4. Core Challenges & Recommendations',
+                        intro: 'The path to widespread AI adoption is hindered by significant infrastructural gaps and talent shortages. This section outlines key challenges and strategic recommendations for Central American leaders.',
+                        content: `
+                            <div class="grid md:grid-cols-2 gap-8 items-start">
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">Infrastructural Gaps & "Green AI"</h3>
+                                    <p class="text-slate-600 mb-4">The path is hindered by low internet penetration and the high resource demands of AI infrastructure. However, the region can leverage its renewable energy potential to become a leader in **"Green AI."**</p>
+                                </div>
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">Recommendations for Leaders</h3>
+                                    <ul class="space-y-4 text-slate-600">
+                                        <li class="flex items-start">
+                                            <span class="text-sky-500 mr-3 mt-1">&#10003;</span>
+                                            <span><strong>For Governments:</strong> Foster regional collaboration and formalize AI governance.</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="text-sky-500 mr-3 mt-1">&#10003;</span>
+                                            <span><strong>For Businesses:</strong> Focus on high-impact sectors and embrace hybrid business models that blend AI with human expertise.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>`
+                    }
+                ]
+            },
+            'europe': {
+                title: 'The State of Artificial Intelligence in Europe: Navigating Trust and Innovation',
+                sections: [
+                    {
+                        id: 'market-europe',
+                        title: '1. The European AI Landscape: A Macro Analysis',
+                        intro: 'This section details Europe\'s distinct trajectory in the global AI race, driven by a surge in generative AI adoption and a unique blend of private and public investment. It highlights key growth sectors and Europe\'s strategic position globally.',
+                        content: `
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                                <div class="bg-white p-6 rounded-xl shadow-md">
+                                    <h3 class="font-semibold text-center mb-4">Europe AI Market Growth (USD Billions)</h3>
+                                    <div class="chart-container"><canvas id="marketGrowthEuropeChart"></canvas></div>
+                                    <p class="text-sm text-slate-500 mt-4 text-center">Spending on AI is projected to reach $144.6 billion by 2028, with a robust CAGR of 30.3%.</p>
+                                </div>
+                                <div class="bg-white p-6 rounded-xl shadow-md">
+                                    <h3 class="font-semibold text-center mb-4">Top AI Spending Sectors in 2025</h3>
+                                    <div class="chart-container"><canvas id="sectorsEuropeChart"></canvas></div>
+                                    <p class="text-sm text-slate-500 mt-4 text-center">The financial services sector leads with 23% of total spending, driven by a need for enhanced efficiency and risk management.</p>
+                                </div>
+                            </div>`,
+                        charts: {
+                            'marketGrowthEuropeChart': {
+                                type: 'line',
+                                labels: ['2024', '2028 (Proj.)'],
+                                data: [69.83, 144.6],
+                                borderColor: '#0ea5e9',
+                                backgroundColor: 'rgba(14, 165, 233, 0.1)'
+                            },
+                             'sectorsEuropeChart': {
+                                type: 'bar',
+                                labels: ['Financial Services', 'Media & Entertainment', 'Professional Services'],
+                                data: [23, 35, 30],
+                                backgroundColor: '#0ea5e9',
+                                ticks: {
+                                    callback: (value) => `${value}%`
+                                }
+                            }
+                        }
+                    },
+                     {
+                        id: 'eu-ai-act',
+                        title: '2. The EU AI Act: Europe\'s Cornerstone Strategy',
+                        intro: 'The EU AI Act is a landmark global regulation. This section provides an overview of its risk-based framework and phased implementation, positioning Europe as a leader in responsible AI and turning regulation into a strategic differentiator.',
+                        content: `
+                            <div class="bg-white p-8 rounded-xl shadow-md">
+                                <h3 class="text-2xl font-bold mb-4">Phased Implementation Timeline</h3>
+                                <p class="text-slate-600 mb-4">The Act entered into force on August 1, 2024, but its requirements will be implemented gradually to allow for a smooth transition. Key dates define the roadmap for compliance.</p>
+                                <div class="relative overflow-x-auto shadow-md rounded-lg">
+                                    <table class="w-full text-sm text-left text-slate-500">
+                                        <thead class="text-xs text-slate-700 uppercase bg-slate-50">
+                                            <tr>
+                                                <th scope="col" class="px-6 py-3">Date</th>
+                                                <th scope="col" class="px-6 py-3">Key Provisions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="bg-white border-b">
+                                                <th scope="row" class="px-6 py-4 font-medium text-slate-900 whitespace-nowrap">Feb 2, 2025</th>
+                                                <td class="px-6 py-4">Prohibition of unacceptable risk systems. Mandatory AI literacy for staff.</td>
+                                            </tr>
+                                            <tr class="bg-white border-b">
+                                                <th scope="row" class="px-6 py-4 font-medium text-slate-900 whitespace-nowrap">Aug 2, 2025</th>
+                                                <td class="px-6 py-4">Governance rules for general-purpose AI (GPAI) and systemic risk models.</td>
+                                            </tr>
+                                            <tr class="bg-white">
+                                                <th scope="row" class="px-6 py-4 font-medium text-slate-900 whitespace-nowrap">Aug 1, 2026</th>
+                                                <td class="px-6 py-4">Full requirements for high-risk AI systems become applicable.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>`
+                    },
+                    {
+                        id: 'europe-innovation',
+                        title: '3. European Innovation: LLMs & Open-Source',
+                        intro: 'Europe\'s innovation is maturing, focusing on building a sovereign, open-source ecosystem. This section explores the rise of European-native LLMs and collaborative platforms that democratize access and reduce reliance on foreign technologies.',
+                        content: `
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">The Rise of Mistral AI & Aleph Alpha</h3>
+                                    <p class="text-slate-600 mb-4">Mistral AI and Aleph Alpha are leading a new wave of European AI innovation, creating models that are transparent, trustworthy, and multilingual to serve the continent's diverse needs.</p>
+                                     <ul class="list-disc list-inside space-y-2 text-slate-600">
+                                        <li><strong class="text-sky-600">Mistral AI:</strong> Leading open-source LLM developer, with models used by major financial institutions and governments.</li>
+                                        <li><strong class="text-sky-600">Aleph Alpha:</strong> Focuses on transparent and trustworthy AI, with its Luminous model supporting multiple European languages.</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">Platforms for Collaboration</h3>
+                                    <p class="text-slate-600 mb-4">The EU is actively funding platforms to democratize AI access. Projects like **OpenEuroLLM** and the **AI-on-Demand Platform** provide tools, datasets, and compute resources to empower researchers and SMEs.</p>
+                                </div>
+                            </div>`
+                    },
+                    {
+                        id: 'outlook-europe',
+                        title: '4. The Path Forward: Recommendations for Leaders',
+                        intro: 'Europe\'s journey is at a crossroads. The following recommendations provide a roadmap for leaders to sustain momentum, address challenges, and fully capitalize on its unique position in the global AI race.',
+                        content: `
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">For Corporate Leaders</h3>
+                                    <ul class="space-y-4 text-slate-600">
+                                        <li class="flex items-start">
+                                            <span class="text-sky-500 mr-3 mt-1">&#10003;</span>
+                                            <span><strong>Accelerate Investment in Sovereign Infrastructure:</strong> Continue to expand initiatives like the "AI Factories" to build a robust, continent-wide computing and data infrastructure.</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="text-sky-500 mr-3 mt-1">&#10003;</span>
+                                            <span><strong>Champion Application-Layer Innovation:</strong> Focus on funding startups that build high-value, sector-specific AI applications, particularly in areas where Europe has a competitive advantage.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                 <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">For Policy Leaders</h3>
+                                    <ul class="space-y-4 text-slate-600">
+                                        <li class="flex items-start">
+                                            <span class="text-sky-500 mr-3 mt-1">&#10003;</span>
+                                            <span><strong>Balance Innovation with Trust:</strong> Adopt a risk-based regulatory framework that fosters confidence without stifling progress.</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="text-sky-500 mr-3 mt-1">&#10003;</span>
+                                            <span><strong>Recognize Infrastructure as a Strategic Asset:</strong> Support the development of robust and secure data centers.</span>
+                                        </li>
+                                         <li class="flex items-start">
+                                            <span class="text-sky-500 mr-3 mt-1">&#10003;</span>
+                                            <span><strong>Promote Public AI Literacy:</strong> Launch partnerships to increase AI understanding across the general population.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>`
+                    }
+                ]
+            },
+            'middle-east-africa': {
+                title: 'A Tale of Two AI Transformations in the Middle East and Africa',
+                sections: [
+                    {
+                        id: 'market-mea',
+                        title: '1. Market & Investment: A Tale of Two Philosophies',
+                        intro: 'The AI market in the Middle East and Africa (MEA) is growing at an explosive rate, but its investment philosophies are a study in contrast. This section highlights the top-down, capital-intensive approach of the Gulf versus the grassroots, open-source ingenuity of Africa.',
+                        content: `
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                                <div class="bg-white p-6 rounded-xl shadow-md">
+                                    <h3 class="font-semibold text-center mb-4">Projected AI Spending in MEA</h3>
+                                    <div class="chart-container"><canvas id="spendingMEAChart"></canvas></div>
+                                    <p class="text-sm text-slate-500 mt-4 text-center">Spending in the META region is projected to reach $14.6 billion by 2028, with a CAGR of 34% from 2024.</p>
+                                </div>
+                                <div class="bg-white p-6 rounded-xl shadow-md">
+                                    <h3 class="font-semibold text-center mb-4">Investment Philosophies</h3>
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div class="text-center p-4 bg-sky-50 rounded-lg">
+                                            <h4 class="font-bold text-lg mb-1 text-sky-600">Middle East</h4>
+                                            <p class="text-sm text-slate-600">State-led, top-down, and capital-intensive projects.</p>
+                                        </div>
+                                        <div class="text-center p-4 bg-sky-50 rounded-lg">
+                                            <h4 class="font-bold text-lg mb-1 text-sky-600">Africa</h4>
+                                            <p class="text-sm text-slate-600">Grassroots, open-source, and ingenuity-driven solutions.</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-sm text-slate-500 mt-4 text-center">While the Middle East is building its future on sovereign wealth, Africa is leveraging open-source to reduce costs and build resilience.</p>
+                                </div>
+                            </div>`,
+                        charts: {
+                            'spendingMEAChart': {
+                                type: 'line',
+                                labels: ['2024', '2028 (Proj.)'],
+                                data: [4.5, 14.6],
+                                borderColor: '#0ea5e9',
+                                backgroundColor: 'rgba(14, 165, 233, 0.1)'
+                            }
+                        }
+                    },
+                    {
+                        id: 'adoption-mea',
+                        title: '2. The State of AI Adoption & Maturity',
+                        intro: 'AI readiness is not uniform across the MEA region. This section details the contrasting adoption maturity and readiness levels, highlighting a significant AI divide driven by capital and infrastructure.',
+                        content: `
+                            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+                                <div class="lg:col-span-3 bg-white p-6 rounded-xl shadow-md">
+                                    <h3 class="font-semibold text-center mb-4">Workplace AI Adoption in the UAE</h3>
+                                    <div class="grid grid-cols-2 gap-4 mt-4">
+                                        <div class="p-4 bg-slate-50 rounded-lg text-center">
+                                            <div class="text-4xl font-bold text-sky-600">80%</div>
+                                            <p class="text-sm text-slate-500">of professionals use AI tools at work, ranking the UAE second globally.</p>
+                                        </div>
+                                        <div class="p-4 bg-slate-50 rounded-lg text-center">
+                                            <div class="text-4xl font-bold text-sky-600">5,000</div>
+                                            <p class="text-sm text-slate-500">AI specialists in Saudi Arabia and the UAE, a stark contrast to Germany's 40,000.</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-sm text-slate-500 mt-4 text-center">Despite high adoption, a severe talent gap remains a primary bottleneck.</p>
+                                </div>
+                                <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-md">
+                                    <h3 class="font-semibold text-center mb-4">Africa's AI Market</h3>
+                                     <div class="chart-container"><canvas id="africaMarketChart"></canvas></div>
+                                    <p class="text-sm text-slate-500 mt-4 text-center">The African market is projected to grow from $4.5 billion in 2025 to $16.5 billion by 2030, but is profoundly underfunded on a global scale.</p>
+                                </div>
+                            </div>`,
+                        charts: {
+                            'africaMarketChart': {
+                                type: 'line',
+                                labels: ['2025', '2030 (Proj.)'],
+                                data: [4.5, 16.5],
+                                borderColor: '#0ea5e9',
+                                backgroundColor: 'rgba(14, 165, 233, 0.1)'
+                            }
+                        }
+                    },
+                    {
+                        id: 'llms-mea',
+                        title: '3. LLMs & Generative AI: Consumption to Creation',
+                        intro: 'Both regions are moving toward localized LLMs to achieve technological sovereignty. This section contrasts the Middle East\'s capital-intensive approach to building sovereign models with Africa\'s open-source strategy for digital inclusion.',
+                        content: `
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">Sovereign AI in the Middle East</h3>
+                                    <p class="text-slate-600 mb-4">Saudi Arabia's **HUMAIN** initiative is a prime example of a top-down approach. It launched **HUMAIN Chat**, powered by the locally developed **ALLAM 34B** model, trained on one of the largest Arabic datasets ever compiled.</p>
+                                     <ul class="list-disc list-inside space-y-2 text-slate-600">
+                                        <li><strong class="text-sky-600">HUMAIN Chat:</strong> A bilingual chatbot for 400M+ Arabic speakers.</li>
+                                        <li><strong class="text-sky-600">ALLAM 34B:</strong> Trained on a massive, locally-sourced Arabic dataset.</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">Open-Source AI in Africa</h3>
+                                    <p class="text-slate-600 mb-4">Africa is embracing open-source AI to counter "algorithmic colonialism." The **African Next Voices** project is creating high-quality datasets for 18 languages, enabling local developers to build culturally relevant solutions at a lower cost.</p>
+                                </div>
+                            </div>`
+                    },
+                    {
+                        id: 'sectors-mea',
+                        title: '4. AI in Action: Sectoral Case Studies',
+                        intro: 'AI is being used to address distinct sets of challenges in MEA, reflecting their unique priorities. Click on a tab below to explore the real-world impact of AI.',
+                        content: `
+                            <div>
+                                <div class="border-b border-gray-200 mb-8">
+                                    <nav class="-mb-px flex space-x-6 justify-center" aria-label="Tabs">
+                                        <button class="tab-button active" data-tab="fintech-mea">Fintech</button>
+                                        <button class="tab-button" data-tab="agritech-mea">Agritech</button>
+                                        <button class="tab-button" data-tab="health-mea">Healthcare</button>
+                                    </nav>
+                                </div>
+                                <div id="tab-content-mea" class="bg-white p-8 rounded-xl shadow-md min-h-[20rem] flex items-center"></div>
+                            </div>`,
+                        tabContents: {
+                             'fintech-mea': `<div class="text-center"><h4 class="text-2xl font-bold mb-4">Financial Services: Driving Inclusion</h4><p class="text-slate-600 max-w-2xl mx-auto mb-6">AI in Africa is a tool for financial inclusion for the over 400 million unbanked. **Jumo** uses AI to create tailored financial products for the underserved across multiple African countries.</p></div>`,
+                            'agritech-mea': `<div class="text-center"><h4 class="text-2xl font-bold mb-4">Agriculture: Enhancing Food Security</h4><p class="text-slate-600 max-w-2xl mx-auto mb-6">AI is a crucial tool for addressing food insecurity. Kenya's **PlantVillage** uses an AI-powered tool called Nuru to help smallholder farmers detect crop diseases, enabling early intervention.</p></div>`,
+                            'health-mea': `<div class="text-center"><h4 class="text-2xl font-bold mb-4">Healthcare: Optimizing & Solving Public Health Issues</h4><p class="text-slate-600 max-w-2xl mx-auto mb-6">In the Middle East, AI is used to analyze medical images. In Nigeria, **Ubenwa** uses AI to combat neonatal diseases, improving child healthcare outcomes.</p></div>`
+                        }
+                    },
+                     {
+                        id: 'outlook-mea',
+                        title: '5. Recommendations & The Road Ahead',
+                        intro: 'The path forward for both regions requires a strategic, context-aware approach. This section provides a summary of key recommendations for investors, policymakers, and businesses.',
+                        content: `
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">For Investors</h3>
+                                    <ul class="space-y-4 text-slate-600">
+                                        <li class="flex items-start">
+                                            <span class="text-sky-500 mr-3 mt-1">&#10003;</span>
+                                            <span><strong>Middle East:</strong> Focus on large-scale, state-backed projects.</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="text-sky-500 mr-3 mt-1">&#10003;</span>
+                                            <span><strong>Africa:</strong> Target purpose-driven startups focused on inclusion and social impact.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                 <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">For Policymakers & Businesses</h3>
+                                    <ul class="space-y-4 text-slate-600">
+                                        <li class="flex items-start">
+                                            <span class="text-sky-500 mr-3 mt-1">&#10003;</span>
+                                            <span><strong>Build Foundational Infrastructure:</strong> Invest in digital infrastructure and sustainable power.</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="text-sky-500 mr-3 mt-1">&#10003;</span>
+                                            <span><strong>Foster Local Talent:</strong> Prioritize education and training to bridge the skills gap.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>`
+                    }
+                ]
+            },
+            'asia': {
+                title: 'The Artificial Intelligence Landscape in Asia: 2023–2025',
+                sections: [
+                    {
+                        id: 'market-asia',
+                        title: '1. Market Dynamics & Investment Trends',
+                        intro: 'Asia has transitioned from a passive consumer of AI to an active architect of its digital future. This section analyzes the explosive growth, with the Asia-Pacific market set to outpace other regions, and highlights the prominent role of state-led investment in directing this growth.',
+                        content: `
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                                <div class="bg-white p-6 rounded-xl shadow-md">
+                                    <h3 class="font-semibold text-center mb-4">APAC AI Market Growth (USD Billions)</h3>
+                                    <div class="chart-container"><canvas id="marketGrowthAPACChart"></canvas></div>
+                                    <p class="text-sm text-slate-500 mt-4 text-center">The APAC AI market is projected to reach a staggering $734.8 billion by 2030, with a CAGR of 46.6%.</p>
+                                </div>
+                                <div class="bg-white p-6 rounded-xl shadow-md">
+                                    <h3 class="font-semibold text-center mb-4">Investment Drivers</h3>
+                                    <div class="grid grid-cols-1 gap-4">
+                                        <div class="p-4 bg-slate-50 rounded-lg">
+                                            <h4 class="font-bold text-lg mb-1 text-sky-600">State-Led Capital</h4>
+                                            <p class="text-sm text-slate-600">In China, the public sector is a primary driver, with **$56 billion** in projected capital expenditure in 2025.</p>
+                                        </div>
+                                        <div class="p-4 bg-slate-50 rounded-lg">
+                                            <h4 class="font-bold text-lg mb-1 text-sky-600">Sovereign Wealth Funds</h4>
+                                            <p class="text-sm text-slate-600">Saudi Arabia and Abu Dhabi are deploying over **$140 billion** in state funds for AI and future tech.</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-sm text-slate-500 mt-4 text-center">This top-down approach is a defining feature of Asia\'s AI landscape, ensuring national priorities are met.</p>
+                                </div>
+                            </div>`,
+                        charts: {
+                            'marketGrowthAPACChart': {
+                                type: 'line',
+                                labels: ['2023', '2030 (Proj.)'],
+                                data: [50.4, 734.8],
+                                borderColor: '#0ea5e9',
+                                backgroundColor: 'rgba(14, 165, 233, 0.1)'
+                            }
+                        }
+                    },
+                    {
+                        id: 'homegrown-llms-asia',
+                        title: '2. The Rise of Homegrown AI & Language Models',
+                        intro: 'Asian nations are strategically and rapidly developing their own large language models (LLMs) to address local nuances, protect data sovereignty, and avoid dependence on foreign technology platforms. This section highlights key initiatives from China, Japan, and South Korea.',
+                        content: `
+                            <div class="relative overflow-x-auto shadow-md rounded-lg">
+                                <table class="w-full text-sm text-left text-slate-500">
+                                    <thead class="text-xs text-slate-700 uppercase bg-slate-50">
+                                        <tr>
+                                            <th scope="col" class="px-6 py-3">Model Name</th>
+                                            <th scope="col" class="px-6 py-3">Country/Region</th>
+                                            <th scope="col" class="px-6 py-3">Key Focus</th>
+                                            <th scope="col" class="px-6 py-3">Notable Achievement</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="bg-white border-b">
+                                            <th scope="row" class="px-6 py-4 font-medium text-slate-900 whitespace-nowrap">DeepSeek-V3, R1</th>
+                                            <td class="px-6 py-4">China</td>
+                                            <td class="px-6 py-4">Open-source, coding, efficiency</td>
+                                            <td class="px-6 py-4">Top rankings on global benchmarks.</td>
+                                        </tr>
+                                        <tr class="bg-white border-b">
+                                            <th scope="row" class="px-6 py-4 font-medium text-slate-900 whitespace-nowrap">"Sarashina"</th>
+                                            <td class="px-6 py-4">Japan</td>
+                                            <td class="px-6 py-4">Japanese cultural and linguistic nuance</td>
+                                            <td class="px-6 py-4">Multimodal LLM with 390B parameters.</td>
+                                        </tr>
+                                        <tr class="bg-white">
+                                            <th scope="row" class="px-6 py-4 font-medium text-slate-900 whitespace-nowrap">HyperCLOVA X</th>
+                                            <td class="px-6 py-4">South Korea</td>
+                                            <td class="px-6 py-4">Korean language and culture proficiency</td>
+                                            <td class="px-6 py-4">Trained on 6,500x more Korean data than GPT-4.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="mt-8 text-center">
+                            </div>`
+                    },
+                    {
+                        id: 'sectors-asia',
+                        title: '3. AI in Action: Sector Deep Dive',
+                        intro: 'AI adoption in Asia is deeply embedded in critical economic sectors. This section provides an interactive look at tangible case studies and quantifiable results in key industries. Click on a tab below to explore the real-world impact of AI.',
+                        content: `
+                            <div>
+                                <div class="border-b border-gray-200 mb-8">
+                                    <nav class="-mb-px flex space-x-6 justify-center" aria-label="Tabs">
+                                        <button class="tab-button active" data-tab="manuf-asia">Manufacturing</button>
+                                        <button class="tab-button" data-tab="ecomm-asia">E-commerce</button>
+                                        <button class="tab-button" data-tab="health-asia">Healthcare</button>
+                                    </nav>
+                                </div>
+                                <div id="tab-content-asia" class="bg-white p-8 rounded-xl shadow-md min-h-[20rem] flex items-center"></div>
+                            </div>`,
+                        tabContents: {
+                             'manuf-asia': `<div class="text-center"><h4 class="text-2xl font-bold mb-4">Manufacturing: Smart Factories</h4><p class="text-slate-600 max-w-2xl mx-auto mb-6">AI is revolutionizing smart factories. **LG's Lighthouse Factory** uses autonomous robots and a private 5G network to produce a new appliance every 13 seconds, boosting productivity by 69%.</p></div>`,
+                            'ecomm-asia': `<div class="text-center"><h4 class="text-2xl font-bold mb-4">E-commerce: Personalization & Logistics</h4><p class="text-slate-600 max-w-2xl mx-auto mb-6">Asian e-commerce leads the world in AI adoption. **Lazada**'s image-based search accounts for over half of all user transactions, while **JD.com**'s smart warehouse uses AI for demand forecasting and autonomous routing.</p></div>`,
+                            'health-asia': `<div class="text-center"><h4 class="text-2xl font-bold mb-4">Healthcare: Advanced Diagnostics</h4><p class="text-slate-600 max-w-2xl mx-auto mb-6">AI is being used to improve diagnostics and streamline administrative tasks. **Tencent's Miying platform** helps doctors in China with early cancer detection, while a **Korean Medical LLM** was trained on 38 million de-identified records.</p></div>`
+                        }
+                    },
+                    {
+                        id: 'challenges-asia',
+                        title: '4. Key Challenges & Future Outlook',
+                        intro: 'Despite rapid progress, significant challenges persist. This section highlights the talent and infrastructure gaps that threaten to create a widening AI divide, while also exploring the future of a multi-polar AI world.',
+                        content: `
+                            <div class="grid md:grid-cols-2 gap-8 items-start">
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">Talent & Infrastructure Gaps</h3>
+                                    <p class="text-slate-600 mb-4">Many Asian nations face a noticeable shortage of local AI experts. Additionally, the immense energy and water demands of AI data centers create a sustainability risk, particularly in the Middle East.</p>
+                                </div>
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">Recommendations for Leaders</h3>
+                                    <ul class="space-y-4 text-slate-600">
+                                        <li class="flex items-start">
+                                            <span class="text-sky-500 mr-3 mt-1">&#10003;</span>
+                                            <span><strong>Harmonized Governance:</strong> Create a common playbook for responsible AI deployment.</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="text-sky-500 mr-3 mt-1">&#10003;</span>
+                                            <span><strong>Public-Private Partnerships:</strong> Bring together governments, academia, and the private sector to bridge the talent and infrastructure gaps.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>`
+                    }
+                ]
+            },
+            'russia': {
+                title: 'The State of Artificial Intelligence in Russia (2023-2025)',
+                sections: [
+                     {
+                        id: 'market-russia',
+                        title: '1. Market & Economy',
+                        intro: 'Russia\'s AI economy is characterized by a rapid, state-supported growth trajectory, though its long-term stability is questioned by its reliance on government initiatives and a low level of private venture capital activity.',
+                        content: `
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                                <div class="bg-white p-6 rounded-xl shadow-md">
+                                    <h3 class="font-semibold text-center mb-4">Russian AI Market Volume & Investment (2023)</h3>
+                                    <div class="chart-container"><canvas id="marketRussiaChart"></canvas></div>
+                                    <p class="text-sm text-slate-500 mt-4 text-center">The domestic AI market reached ₽900 billion, representing a 37% year-on-year increase.</p>
+                                </div>
+                                <div class="bg-white p-6 rounded-xl shadow-md">
+                                    <h3 class="font-semibold text-center mb-4">Enterprise AI Adoption in Russia (2024)</h3>
+                                    <div class="chart-container"><canvas id="adoptionRussiaChart"></canvas></div>
+                                    <p class="text-sm text-slate-500 mt-4 text-center">A notable 74% of Russian companies were using AI in their core business functions, a 12% increase from the previous year.</p>
+                                </div>
+                            </div>`,
+                        charts: {
+                            'marketRussiaChart': {
+                                type: 'bar',
+                                labels: ['AI Market Volume', 'AI Investment'],
+                                data: [900, 305],
+                                backgroundColor: '#0ea5e9',
+                                ticks: {
+                                    callback: (value) => `₽${value}B`
+                                }
+                            },
+                             'adoptionRussiaChart': {
+                                type: 'bar',
+                                labels: ['2023', '2024'],
+                                data: [62, 74],
+                                backgroundColor: ['#60a5fa', '#0ea5e9'],
+                                ticks: {
+                                    callback: (value) => `${value}%`
+                                }
+                            }
+                        }
+                    },
+                    {
+                        id: 'homegrown-llms-russia',
+                        title: '2. Homegrown Large Language Models',
+                        intro: 'Russia is one of a handful of countries actively developing its own foundational generative AI models. This section details the two most prominent domestic LLMs, Sberbank\'s GigaChat and Yandex\'s YandexGPT, and their strategic importance for a "Russian-first" approach.',
+                        content: `
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">Sberbank's GigaChat</h3>
+                                    <p class="text-slate-600 mb-4">Developed by Russia's largest financial institution, GigaChat is a multimodal platform that generates text, code, images, and music. Sberbank claims it communicates better in Russian than foreign-based chatbots, and it had been adopted by over **15,000** Russian companies by early 2025.</p>
+                                </div>
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">Yandex's YandexGPT</h3>
+                                    <p class="text-slate-600 mb-4">Yandex's LLM is trained on a vast dataset of books, magazines, and other open sources available in Russian. In 2024, **80%** of companies surveyed used YandexGPT for text processing tasks, showcasing its strong market penetration.</p>
+                                </div>
+                            </div>`
+                    },
+                    {
+                        id: 'challenges-russia',
+                        title: '3. Enduring Obstacles & External Pressures',
+                        intro: 'Despite its ambitions, Russia\'s AI ecosystem faces profound, persistent challenges that threaten to undermine its long-term goals. This section explores the chilling effect of Western sanctions and the widening AI talent gap caused by an ongoing "brain drain."',
+                        content: `
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">The Chilling Effect of Western Sanctions</h3>
+                                    <p class="text-slate-600 mb-4">Export controls have severely restricted Russia's access to critical hardware, including advanced semiconductors and GPUs, forcing a reliance on an import substitution strategy which has largely failed.</p>
+                                </div>
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">The Widening AI Talent Gap</h3>
+                                    <p class="text-slate-600 mb-4">The ongoing "brain drain" of skilled IT professionals has created a critical shortage of qualified employees. Historically, the emigration of highly skilled workers can diminish local research productivity for decades.</p>
+                                    <div class="text-4xl font-bold text-sky-600">51%</div>
+                                    <p class="text-sm text-slate-500 mt-2">of companies are not ready to implement AI due to a lack of specialists and high costs.</p>
+                                </div>
+                            </div>`
+                    },
+                     {
+                        id: 'outlook-russia',
+                        title: '4. Outlook & International Implications',
+                        intro: 'The future of Russia\'s AI ecosystem will be defined by its ability to navigate a complex domestic landscape and a challenging international environment. This section summarizes the key strategic recommendations for the path ahead.',
+                        content: `
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">Future Strategic Focus</h3>
+                                    <ul class="space-y-4 text-slate-600">
+                                        <li class="flex items-start">
+                                            <span class="text-sky-500 mr-3 mt-1">&#10003;</span>
+                                            <span><strong>State-Led Development:</strong> Continued prioritization of AI investments in government procurement, healthcare, and cybersecurity.</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="text-sky-500 mr-3 mt-1">&#10003;</span>
+                                            <span><strong>Geopolitical Model for Sovereignty:</strong> Leveraging alliances with BRICS nations and deepening collaboration with China to build a non-Western digital sphere.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                 <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">The Road Ahead</h3>
+                                    <p class="text-slate-600">Russia is building an AI ecosystem that is not just technologically sovereign but also ideologically aligned with its political system. The goal is to create a sovereign information and governance space where AI outputs reflect state-sanctioned norms and values.</p>
+                                </div>
+                            </div>`
+                    }
+                ]
+            },
+            'nordic-countries': {
+                title: 'The Nordic Paradigm: An In-Depth Analysis',
+                sections: [
+                    {
+                        id: 'nordic-intro',
+                        title: '1. Defining the Nordic Region',
+                        intro: 'The Nordic Region is a distinct and multi-faceted geopolitical area with a unique identity and a long tradition of inter-governmental collaboration. This section clarifies its composition and historical context.',
+                        content: `
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">Geographic & Political Context</h3>
+                                    <p class="text-slate-600 mb-4">The Nordic Region consists of five sovereign states (Denmark, Finland, Iceland, Norway, and Sweden) and three autonomous territories (Faroe Islands, Greenland, and Åland). This broader "Nordic" identity is a unifying force that allows for deep cooperation without a single state entity.</p>
+                                </div>
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">A History of Cooperation</h3>
+                                    <p class="text-slate-600 mb-4">The Nordic Council and the Nordic Council of Ministers have been influential in coordinating policy on a wide range of issues, from economics to social welfare, decades before similar developments in the European Union.</p>
+                                </div>
+                            </div>`
+                    },
+                    {
+                        id: 'nordic-model',
+                        title: '2. The Nordic Model: Pillars of Success',
+                        intro: 'The Nordic Model is a unique synthesis of social security and capitalistic dynamics, allowing the region to successfully combine strong economic performance with low levels of inequality. This section explores its four core pillars and their integrated function.',
+                        content: `
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">Pillars of the Model</h3>
+                                    <ul class="space-y-4 text-slate-600">
+                                        <li class="flex items-start">
+                                            <span class="text-sky-500 mr-3 mt-1">&#10003;</span>
+                                            <span><strong>Substantial Public Investment:</strong> High public spending on education, healthcare, and family policies.</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="text-sky-500 mr-3 mt-1">&#10003;</span>
+                                            <span><strong>Influential Labor Unions:</strong> Strong role in coordinated wage-setting and high membership rates.</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="text-sky-500 mr-3 mt-1">&#10003;</span>
+                                            <span><strong>High Social Insurance Expenditure:</strong> An extensive safety net for unemployment, disability, or illness.</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="text-sky-500 mr-3 mt-1">&#10003;</span>
+                                            <span><strong>High and Progressive Taxation:</strong> These services are funded by some of the highest tax rates in the world.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                 <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">Key Outcome: Pre-Distribution of Earnings</h3>
+                                    <p class="text-slate-600 mb-4">The region's even income distribution is primarily driven by a more equal "pre-distribution" of earnings, thanks to coordinated wage bargaining. This creates fundamental fairness before any taxes or transfers are applied.</p>
+                                </div>
+                            </div>`
+                    },
+                    {
+                        id: 'nordic-challenges',
+                        title: '3. Future Outlook: Megatrends and Challenges',
+                        intro: 'The Nordic model faces its greatest long-term challenges from demographic shifts, economic pressures, and a growing urban-rural divide. This section explores the key pressures testing the model\'s sustainability and its social fabric.',
+                        content: `
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">Demographic & Economic Pressures</h3>
+                                    <p class="text-slate-600 mb-4">Record-low birth rates and an aging population put immense strain on the labor market and the welfare state. Post-pandemic, some countries have seen unemployment rates remain high, while inflation has contributed to rising national debt.</p>
+                                </div>
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">The Urban-Rural Divide</h3>
+                                    <p class="text-slate-600 mb-4">Population growth is heavily concentrated in urban areas, while rural regions decline. This spatial inequality challenges the core principle of **universalism**, which dictates equal access to services regardless of location.</p>
+                                </div>
+                            </div>`
+                    },
+                    {
+                        id: 'nordic-conclusions',
+                        title: '4. Conclusion: Lessons & Legacy',
+                        intro: 'The Nordic paradigm stands as a unique and influential socio-economic model. This section concludes with a summary of its legacy and the critical questions it must answer to thrive in a more complex and interconnected future.',
+                        content: `
+                            <div class="bg-white p-8 rounded-xl shadow-md">
+                                <h3 class="text-2xl font-bold mb-4">Lessons for the World</h3>
+                                <p class="text-slate-600 mb-4">The Nordic model demonstrates that it is possible to combine prosperity with equality and competitiveness with a high degree of social welfare. Its success is not a result of a single policy but the integrated effect of its core pillars.</p>
+                                <p class="text-slate-600 mb-4">To ensure its continued relevance, the region must avoid complacency and strategically adapt to emerging realities, maintaining its core values of trust and cooperation while embracing necessary reforms.</p>
+                            </div>`
+                    }
+                ]
+            },
+            'india': {
+                title: 'India\'s Digital Ascent: A Deep Dive into the National Strategy',
+                sections: [
+                    {
+                        id: 'india-strategy',
+                        title: '1. National Strategy & Governance',
+                        intro: 'India is positioning itself as a pivotal force in the global AI landscape with its "IndiaAI mission." This section explores the government\'s strategic vision, which balances rapid innovation with responsible, indigenous governance, all while being mindful of the nation\'s vast linguistic diversity.',
+                        content: `
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">The "IndiaAI mission"</h3>
+                                    <p class="text-slate-600 mb-4">With an outlay of **₹10,372 crore**, this national strategy is built on seven pillars to democratize technology, address local challenges, and cement the country's position as a global AI leader.</p>
+                                </div>
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">Governance & Strategic Autonomy</h3>
+                                    <p class="text-slate-600 mb-4">India is taking a pragmatic approach to regulation, reinterpreting existing legal frameworks to combat misinformation and deepfakes. Its foreign policy of **"strategic autonomy"** allows it to navigate a complex geopolitical landscape, engaging with forums like BRICS and the Quad.</p>
+                                </div>
+                            </div>`
+                    },
+                    {
+                        id: 'india-sectors',
+                        title: '2. Economic & Industrial Impact',
+                        intro: 'AI is no longer a theoretical concept in India; it\'s a practical tool reshaping major sectors. This section provides an interactive look at the tangible impact of AI across key industries, from IT and fintech to healthcare and agriculture.',
+                        content: `
+                            <div>
+                                <div class="border-b border-gray-200 mb-8">
+                                    <nav class="-mb-px flex space-x-6 justify-center" aria-label="Tabs">
+                                        <button class="tab-button active" data-tab="it-india">IT & BPO</button>
+                                        <button class="tab-button" data-tab="fintech-india">Fintech</button>
+                                        <button class="tab-button" data-tab="health-india">Healthcare</button>
+                                        <button class="tab-button" data-tab="agri-india">Agriculture</button>
+                                    </nav>
+                                </div>
+                                <div id="tab-content-india" class="bg-white p-8 rounded-xl shadow-md min-h-[20rem] flex items-center"></div>
+                            </div>`,
+                        tabContents: {
+                             'it-india': `<div class="text-center"><h4 class="text-2xl font-bold mb-4">IT & BPO: From Backend to Innovation Hub</h4><p class="text-slate-600 max-w-2xl mx-auto mb-6">With a workforce of over 5.4 million, India's IT sector is at a critical juncture. Global Capability Centers (GCCs) are at the forefront of a shift, projected to create over <strong class="text-sky-600">1.2 million</strong> new tech jobs by 2027 in advanced areas like Generative AI.</p></div>`,
+                            'fintech-india': `<div class="text-center"><h4 class="text-2xl font-bold mb-4">Fintech: Fraud Detection & Innovation</h4><p class="text-slate-600 max-w-2xl mx-auto mb-6">The financial services industry is a leader in adopting AI. Indian banks have reported a <strong class="text-sky-600">40% reduction</strong> in fraud losses after implementing AI-driven detection tools.</p></div>`,
+                            'health-india': `<div class="text-center"><h4 class="text-2xl font-bold mb-4">Healthcare: Improving Diagnostics</h4><p class="text-slate-600 max-w-2xl mx-auto mb-6">AI adoption among health-tech startups jumped from 20% to 40% in just 18 months. Startups like **Qure.ai** assist clinicians in the early detection of diseases like lung cancer and tuberculosis.</p></div>`,
+                            'agri-india': `<div class="text-center"><h4 class="text-2xl font-bold mb-4">Agriculture: Precision Farming</h4><p class="text-slate-600 max-w-2xl mx-auto mb-6">AI-powered precision farming technologies are helping farmers optimize resource use. **Farmonaut**'s "Jeevn AI" advisory system provides real-time insights on soil health using satellite imagery.</p></div>`
+                        }
+                    },
+                    {
+                        id: 'india-challenges',
+                        title: '3. Core Challenges & Future Outlook',
+                        intro: 'Despite significant progress, India\'s AI journey is not without its hurdles. This section highlights the persistent talent and infrastructure gaps, while outlining a positive outlook driven by the nation\'s demographic dividend and a vibrant innovation ecosystem.',
+                        content: `
+                            <div class="grid md:grid-cols-2 gap-8 items-start">
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">Talent Shortage & Digital Divide</h3>
+                                    <p class="text-slate-600 mb-4">A startling skills gap exists in the AI sector, with a projected shortfall of **53%** by 2026. For every ten open Generative AI roles, there is only one qualified engineer. This is compounded by a persistent urban-rural digital divide.</p>
+                                </div>
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">Innovation Ecosystem</h3>
+                                    <p class="text-slate-600 mb-4">India\'s innovation ecosystem is flourishing. The recent launch of **"Bharat Gen,"** a multimodal LLM for Indian languages, shows a commitment to technological sovereignty. The country also ranks as the second-largest contributor to GitHub AI projects.</p>
+                                </div>
+                            </div>`
+                    }
+                ]
+            },
+            'oceania': {
+                title: 'The Oceania AI Landscape: A Strategic Assessment',
+                sections: [
+                    {
+                        id: 'market-oceania',
+                        title: '1. Market & Growth Trajectories',
+                        intro: 'The AI market in Oceania is moving from speculative interest to purposeful, efficiency-driven adoption. This section details the robust growth of the market in Australia and New Zealand, driven by a strategic response to a post-recession environment.',
+                        content: `
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                                <div class="bg-white p-6 rounded-xl shadow-md">
+                                    <h3 class="font-semibold text-center mb-4">Australia AI Market Growth (USD Billions)</h3>
+                                    <div class="chart-container"><canvas id="marketGrowthAustraliaChart"></canvas></div>
+                                    <p class="text-sm text-slate-500 mt-4 text-center">The market is projected for dramatic expansion to $46.38 billion by 2030, with a CAGR of 48.3%.</p>
+                                </div>
+                                <div class="bg-white p-6 rounded-xl shadow-md">
+                                    <h3 class="font-semibold text-center mb-4">Digital Transformation Market (USD Billions)</h3>
+                                    <div class="chart-container"><canvas id="digitalTransChart"></canvas></div>
+                                    <p class="text-sm text-slate-500 mt-4 text-center">The broader digital transformation market in Australia and New Zealand is on a trajectory to reach $122.76 billion by 2030.</p>
+                                </div>
+                            </div>`,
+                        charts: {
+                            'marketGrowthAustraliaChart': {
+                                type: 'line',
+                                labels: ['2023', '2030 (Proj.)'],
+                                data: [2.93, 46.38],
+                                borderColor: '#0ea5e9',
+                                backgroundColor: 'rgba(14, 165, 233, 0.1)'
+                            },
+                             'digitalTransChart': {
+                                type: 'line',
+                                labels: ['2025', '2030 (Proj.)'],
+                                data: [37.54, 122.76],
+                                borderColor: '#60a5fa',
+                                backgroundColor: 'rgba(96, 165, 250, 0.1)'
+                            }
+                        }
+                    },
+                     {
+                        id: 'policy-oceania',
+                        title: '2. Policy & Governance Framework',
+                        intro: 'Both Australia and New Zealand have adopted a distinctive, "light-touch" approach to AI governance. This section details how their national strategies focus on principles-based frameworks to foster innovation while managing risks and building public trust.',
+                        content: `
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">The "Light-Touch" Approach</h3>
+                                    <p class="text-slate-600 mb-4">The region's pragmatic neutrality avoids the heavy-handed regulation of the EU while also seeking more safeguards than the private-sector-led models of the United States. This aims to foster innovation and build public trust.</p>
+                                </div>
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">Barriers to AI Adoption</h3>
+                                    <ul class="list-disc list-inside space-y-2 text-slate-600">
+                                        <li>Lack of AI skills: A projected shortfall of up to **60,000** professionals by 2027 in Australia.</li>
+                                        <li>Governance and regulation uncertainty.</li>
+                                        <li>Fragmented deployment and a "maturity gap."</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mt-8 text-center">
+                            </div>`
+                    },
+                    {
+                        id: 'innovation-oceania',
+                        title: '3. Innovation & Technology: A Local Focus',
+                        intro: 'The AI ecosystem in Oceania is not focused on developing foundational models, but rather on an intelligent application of existing technologies. This section highlights the "sovereignty of application" approach and key local innovators.',
+                        content: `
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">"Sovereignty of Application"</h3>
+                                    <p class="text-slate-600 mb-4">This strategy is a pragmatic response to the immense cost of competing with global AI superpowers. The region avoids building its own foundational models and instead focuses on adopting and adapting existing technologies to solve local challenges in high-value sectors.</p>
+                                </div>
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">Key Innovators in Oceania</h3>
+                                     <ul class="list-disc list-inside space-y-2 text-slate-600">
+                                        <li><strong class="text-sky-600">Halter (NZ):</strong> Agritech company using AI-powered smart collars for cows.</li>
+                                        <li><strong class="text-sky-600">Nuix (AU):</strong> Investigative analytics software with advanced NLP capabilities.</li>
+                                        <li><strong class="text-sky-600">Harrison.ai (AU):</strong> Healthcare firm developing AI tools for clinical diagnosis.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mt-8">
+                            </div>`
+                    },
+                    {
+                        id: 'outlook-oceania',
+                        title: '4. The Human Element & The Path to Pervasive Adoption',
+                        intro: 'A critical barrier to scaling AI is a shortage of talent and a lack of "AI literacy" across the broader workforce. This section explores how Oceania is working to overcome this challenge and move beyond fragmented deployment.',
+                        content: `
+                            <div class="grid md:grid-cols-2 gap-8 items-start">
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">The AI Literacy Gap</h3>
+                                    <p class="text-slate-600 mb-4">Only **37%** of Australian businesses believe their workforce is prepared with the necessary skills, and many leaders lack the understanding to move beyond exploratory use cases.</p>
+                                </div>
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <h3 class="text-2xl font-bold mb-4">Recommendations for Leaders</h3>
+                                    <ul class="space-y-4 text-slate-600">
+                                        <li class="flex items-start">
+                                            <span class="text-sky-500 mr-3 mt-1">&#10003;</span>
+                                            <span><strong>Strengthen Governance:</strong> Implement clear, enforceable regulations for high-risk AI in finance and healthcare to build trust.</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="text-sky-500 mr-3 mt-1">&#10003;</span>
+                                            <span><strong>Invest in AI Literacy:</strong> Shift focus from specialists to broad-based AI training for the entire workforce.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>`
+                    }
+                ]
+            }
+        };
+        const reports = ['north-america', 'south-america', 'central-america', 'europe', 'middle-east-africa', 'asia', 'russia', 'nordic-countries', 'india', 'oceania'];
+        function showHomePage() {
+            document.getElementById('home-page').classList.remove('hidden');
+            document.getElementById('report-page').classList.add('hidden');
+            document.getElementById('report-content').innerHTML = '';
+            window.location.hash = '';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        function showReportPage(reportId, shouldUpdateURL = true) {
+            const report = reportsData[reportId];
+            if (!report) {
+                showHomePage();
+                return;
+            }
+            const reportContentDiv = document.getElementById('report-content');
+            reportContentDiv.innerHTML = `
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-slate-900">${report.title}</h1>
+                </div>
+                ${report.sections.map(section => `
+                    <section id="${section.id}" class="mb-16 scroll-mt-20">
+                        <div class="text-center mb-8">
+                            <h2 class="text-3xl font-bold text-slate-900">${section.title}</h2>
+                            <p class="mt-2 text-lg text-slate-500 max-w-4xl mx-auto">${section.intro}</p>
+                        </div>
+                        ${section.content}
+                    </section>
+                `).join('')}
+            `;
+            document.getElementById('home-page').classList.add('hidden');
+            document.getElementById('report-page').classList.remove('hidden');
+            if (shouldUpdateURL) {
+                window.location.hash = reportId;
+            }
+            report.sections.forEach(section => {
+                if (section.charts) {
+                    for (const chartId in section.charts) {
+                        const chartData = section.charts[chartId];
+                        const ctx = document.getElementById(chartId);
+                        if (!ctx) continue;
+                        const chartConfig = {
+                            type: chartData.type,
+                            data: {
+                                labels: chartData.labels,
+                                datasets: [{
+                                    label: chartData.label,
+                                    data: chartData.data,
+                                    borderColor: chartData.borderColor || '#0ea5e9',
+                                    backgroundColor: chartData.backgroundColor || 'rgba(14, 165, 233, 0.1)',
+                                    fill: true,
+                                    tension: 0.4,
+                                    borderRadius: 4
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                cutout: chartData.type === 'doughnut' ? '60%' : undefined,
+                                plugins: {
+                                    legend: { position: chartData.type === 'doughnut' ? 'bottom' : 'none' }
+                                },
+                                scales: {
+                                    y: { beginAtZero: true, ...(chartData.ticks ? {ticks: chartData.ticks} : {}) },
+                                    x: { ...(chartData.indexAxis === 'y' ? { beginAtZero: true } : {}) }
+                                },
+                                indexAxis: chartData.indexAxis,
+                            }
+                        };
+                        new Chart(ctx, chartConfig);
+                    }
+                }
+                if (section.tabContents) {
+                    const tabButtons = document.querySelectorAll(`#${section.id} .tab-button`);
+                    const tabContentContainer = document.querySelector(`#${section.id} [id^="tab-content"]`);
+                    if (tabButtons.length > 0 && tabContentContainer) {
+                        tabContentContainer.innerHTML = section.tabContents[tabButtons[0].dataset.tab];
+                        tabButtons.forEach(btn => {
+                            btn.addEventListener('click', () => {
+                                const tabName = btn.dataset.tab;
+                                tabContentContainer.innerHTML = section.tabContents[tabName];
+                                tabButtons.forEach(b => b.classList.remove('active'));
+                                btn.classList.add('active');
+                            });
+                        });
+                    }
+                }
+            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            if (document.getElementById('player')) {
+                const player = new Plyr('#player');
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.report-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    showReportPage(card.dataset.reportId);
+                });
+            });
+            const reportId = window.location.hash.substring(1);
+            if (reportId && reportsData[reportId]) {
+                showReportPage(reportId, false);
+            } else {
+                showHomePage();
+            }
+        });
+    </script>
+</body>
+</html>
